@@ -4,12 +4,12 @@
     },
     "autoload": {
         "psr-4": {
-            "TDD\\": "src/"
+            "OM\\SubOM\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TDD\\Test\\": "tests/"
+            "OM\\SubOM\\Test\\": "tests/"
         }
     }
 }

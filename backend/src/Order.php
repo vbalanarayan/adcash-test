@@ -1,8 +1,10 @@
 <?php
+namespace OM\SubOM;
 
+use \PDO;
 class Order
 {
-	private $db;
+	protected $db;
 	//Discounted item is hardcoded for convenience, it can be moved to config in actual project
 	const DISCOUNT_ITEM_ID = 2;
 

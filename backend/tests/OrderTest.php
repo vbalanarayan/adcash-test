@@ -1,26 +1,35 @@
 <?php
-namespace OM\Test;
+namespace OM\SubOM\Test;
 require dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR .'autoload.php';
 
 use PHPUnit\Framework\TestCase;
-use OM\Order;
+use OM\SubOM\Order;
+use \PDO;
 
 class OrderTest extends TestCase {
+	protected $db;
+	public function setUp() : void {
+		$this->db = $this->getConnection();
+	}
 	public function testUnitPrice() {
-		$Order = new Order();
+		$Order = new Order($this->db);
 		$this->assertEquals(
 			1.8,
-			$Receipt->total(1),
+			$Order->getUnitPrice(1),
 			'Price of the first product is 1.8'
 		);
 	}
 
 	public function testTotalPrice() {
-		$Order = new Order();
+		$Order = new Order($this->db);
 		$this->assertEquals(
 			5.12,
-			$Receipt->calculateTotalPrice(2, 1.6, 3),
+			$Order->calculateTotalPrice(2, 1.6, 4),
 			'Total Price after discount should be 5.12 EUR'
 		);
+	}
+
+	protected function getConnection() {
+		return new PDO("mysql:host=localhost:3307;dbname=adcash","root", "root");
 	}
 }

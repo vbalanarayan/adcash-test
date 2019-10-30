@@ -1,4 +1,6 @@
-<?php session_start();
+<?php 
+namespace OM;
+session_start();
 /** This file acts as a backend entry point.
 The requests are routed to the relevant functions
 This uses a custom design pattern
@@ -40,7 +42,7 @@ echo json_encode($finaloutput);
 function addOrder() {
     global $dbh;
 	
-	$order = new Order($dbh);
+	$order = new SubOM\Order($dbh);
 
     $user_id = trim($_POST['select_user']);
     $product_id = trim($_POST['select_product']);
@@ -59,7 +61,7 @@ function addOrder() {
 function editOrder() {
     global $dbh;
     
-    $order = new Order($dbh);
+    $order = new SubOM\Order($dbh);
 
     $user_id = trim($_POST['select_user']);
     $product_id = trim($_POST['select_product']);
@@ -79,7 +81,7 @@ function editOrder() {
 function fetchOrder() {
     global $dbh;
     
-    $order = new Order($dbh);
+    $order = new SubOM\Order($dbh);
 
     $searchParams['order_period'] = trim($_POST['order_period']);
     if (isset($_POST['search_param']) && trim($_POST['search_param']) != '') {
@@ -99,7 +101,7 @@ function fetchOrder() {
 function fetchOrderDetail() {
     global $dbh;
     
-    $order = new Order($dbh);
+    $order = new SubOM\Order($dbh);
     $orderId = trim($_POST['order_id']);
     $result = $order->getOrderDetail($orderId);
     if ($result) {
@@ -114,7 +116,7 @@ function fetchOrderDetail() {
 function deleteOrder() {
     global $dbh;
     
-    $order = new Order($dbh);
+    $order = new SubOM\Order($dbh);
 
     $order_id = trim($_POST['order_id']);
     
