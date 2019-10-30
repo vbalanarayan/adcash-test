@@ -2,7 +2,7 @@
 This repository contains the source code for the assignment given
 
 # UI Framework Used
-Bootstrap and jQuery
+Bootstrap and jQuery - An existing theme is customized
 
 # Backend Framework Used
 No Framework - Core PHP is used
