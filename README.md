@@ -7,6 +7,9 @@ Bootstrap and jQuery - An existing theme is customized
 # Backend Framework Used
 No Framework - Core PHP is used
 
+# Testing Framework Used
+PHPUnit
+
 # Quick Demo of the project
 http://ideashack.in/adcashtest/
 
