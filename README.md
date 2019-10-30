@@ -1,13 +1,13 @@
 # adcash-test
-To evaluate the code for the assignment given
+This repository contains the source code for the assignment given
 
-UI Framework Used
+# UI Framework Used
 Bootstrap and jQuery
 
-Backend
+# Backend Framework Used
 No Framework - Core PHP is used
 
-Quick Demo of the project
+# Quick Demo of the project
 http://ideashack.in/adcashtest/
 
 User: demo
